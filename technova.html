@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tech Nova</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+/* ---------- BACKGROUND IMAGE SPACE ---------- */
+body{
+    margin:0;
+    min-height:100vh;
+    background: url("bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color:white;
+}
+
+/* Optional overlay for readability */
+.overlay{
+    min-height:100vh;
+    background: rgba(0,0,0,0.55);
+    padding:40px 20px;
+    position:relative;
+}
+
+/* ---------- REGISTRATION FEE BADGE ---------- */
+.fee-badge{
+    position:absolute;
+    top:20px;
+    right:20px;
+    background:linear-gradient(orange,red);
+    padding:12px 18px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:14px;
+    box-shadow:0 6px 15px rgba(0,0,0,0.4);
+}
+
+/* ---------- TITLE ---------- */
+.title{
+    text-align:center;
+    margin-top:40px;
+}
+
+.title h1{
+
+    font-size:56px;
+    margin-bottom:10px;
+    background: linear-gradient(white,plum);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.title p{
+    font-size:18px;
+    opacity:0.9;
+}
+
+/* ---------- EVENT GRID ---------- */
+.event-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:25px;
+    max-width:900px;
+    margin:50px auto;
+}
+
+.event-card{
+    padding:22px;
+    border-radius:16px;
+    transition:0.3s ease;
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+}
+
+.event-card:hover{
+    transform:translateY(-10px);
+}
+
+/* ---------- EVENT COLORS ---------- */
+.code{
+    background:linear-gradient(135deg,#00b4db,#0083b0);
+}
+
+.design{
+    background:linear-gradient(135deg,#11998e,#38ef7d);
+}
+
+.seminar{
+    background:linear-gradient(135deg,#8e2de2,#4a00e0);
+}
+
+.hunt{
+    background:linear-gradient(135deg,#b24592,#5f0a2e);
+}
+
+.fun{
+    background:linear-gradient(135deg,#ff6a88,#ff9a44);
+    
+}
+
+.event-card h3{
+    margin-bottom:8px;
+    font-size:20px;
+}
+
+.event-card p{
+    font-size:14px;
+    line-height:1.5;
+}
+
+.date{
+    margin-top:10px;
+    font-weight:bold;
+    font-size:14px;
+}
+
+/* ---------- REGISTER BUTTON ---------- */
+.btn{
+    display:block;
+    width:fit-content;
+    margin:40px auto 10px;
+    padding:14px 40px;
+    background:linear-gradient(white);
+    color:blue;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 20px rgba(0,0,0,0.4);
+}
+
+/* ---------- FOOTER ---------- */
+.footer{
+    text-align:center;
+    font-size:14px;
+    margin-top:10px;
+    opacity:0.9;
+}
+/* Base animation */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.5s ease forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.3s; }
+.delay-3 { animation-delay: 0.5s; }
+.delay-4 { animation-delay: 0.7s; }
+.delay-5 { animation-delay: 0.9s; }
+
+/* Learn more button */
+.learn-more-btn{
+    margin-top: 12px;
+    padding: 6px 14px;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.5);
+    color:#00c6ff;
+    border-radius: 6px;
+    cursor: help;
+    font-size: 13px;
+}
+
+.learn-more-btn:hover{
+    background: blue;
+}
+
+/* Modal background */
+.modal{
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal box */
+.modal-content{
+    background: #ffffff;
+    color: #222;
+    padding: 25px;
+    border-radius: 14px;
+    max-width: 420px;
+    text-align: center;
+}
+
+.modal-content h2{
+    margin-bottom: 15px;
+}
+
+.modal-content button{
+    margin-top: 15px;
+    padding: 8px 20px;
+    border: none;
+    background: #0072ff;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="overlay">
+
+    <!-- Registration Fee -->
+    <div class="fee-badge">
+        Registration Fee: ₹100 / Event
+    </div>
+
+    <!-- Title -->
+    <div class="title"><h1 class="fade-up delay-1"><b>TECHNOVA</b></h1>
+
+       <p class="fade-up delay-2">
+    A fusion of innovation, creativity, and fun
+</p>
+
+    </div>
+
+    <!-- Events -->
+    <div class="event-grid fade-up delay-3">
+
+
+        <div class="event-card code">
+            <h3>Code Craft</h3>
+            <p>
+                Solve coding challenges and test your logic.
+             
+            </p>
+            <div class="date">📅 Feb 20, 2026</div>
+        </div>
+
+        <div class="event-card design">
+            <h3>ArtByte</h3>
+            <p>
+                Create stunning designs using Canva.<br>
+                Turn ideas into visuals.
+            </p>
+            <div class="date">📅 Feb 20, 2026</div>
+        </div>
+
+        <div class="event-card seminar">
+            <h3>Tech Talk</h3>
+            <p>
+                Team-based seminar presentation.<br>
+                4 members per team.
+            </p>
+<button class="learn-more-button" onclick="openTechTalkInfo()">impt info....</button>
+
+            <div class="date">📅 Feb 21, 2026</div>
+                    </div>
+
+        <div class="event-card hunt">
+            <h3>Cyber Hunt</h3>
+            <p>
+                Decode clues and hunt for flags.<br>
+                Logic meets adventure.
+            </p>
+            <div class="date">📅 Feb 21, 2026</div>
+        </div>
+
+        <div class="event-card fun">
+            <h3>Cultural Events</h3>
+            <p>
+                Spot games and fun activities.<br>
+                Relax and enjoy the fest.
+            </p>
+            <div class="date">📅 Feb 22, 2026</div>
+        </div>
+
+    </div>
+
+    <!-- Button -->
+   <a href="register.html" class="btn fade-up delay-5">
+    ➤Register Now
+</a>
+
+
+    <div class="footer fade-up delay-5">
+        📍Venue: NBKR Institute of Science and Technology, Vidyanagar
+    </div>
+
+</div>
+<div id="techTalkModal" class="modal">
+    <div class="modal-content">
+        <h2>Tech Talk – Group Registration</h2>
+        <p>
+            • Tech Talk is a <b>group event</b>.<br><br>
+            • Each team must have a <b>unique group name</b>.<br><br>
+            • <b>All group members must register individually</b>
+              using the <b>same group name</b>.<br><br>
+            • Registrations with the same group name will be
+              <b>automatically grouped</b>.
+        </p>
+
+        <button onclick="closeTechTalkInfo()">Got it</button>
+    </div>
+</div>
+<script>
+function openTechTalkInfo(){
+    document.getElementById("techTalkModal").style.display = "flex";
+}
+
+function closeTechTalkInfo(){
+    document.getElementById("techTalkModal").style.display = "none";
+}
+</script>
+
+</body>
+</html>

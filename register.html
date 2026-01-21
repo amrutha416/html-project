@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tech Nova Registration</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+	box-color:pink;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    background:lightblue;
+}
+
+.form-section{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.form-box{
+    background:white;
+    padding:30px;
+    border-radius:16px;
+    width:100%;
+    max-width:540px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.15);
+}
+.form-box h2{
+    text-align:center;
+    color:purple;
+}
+
+label{
+    font-weight:bold;
+    display:block;
+    margin-top:10px;
+}
+
+input,select{
+    width:100%;
+    padding:10px;
+    margin:6px 0;
+
+}
+
+.gender{
+    display:flex;
+    justify-content:space-around;
+    margin:10px 0;
+	color:red;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:linear-gradient(purple);
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+  .info{
+    text-align:center;
+    font-size:13px;
+    margin-top:10px;
+    color:#333;
+}
+.field-label{
+    font-weight:600;
+    margin-top:12px;
+    display:block;
+    color:#0d47a1;
+}
+
+.gender-inline{
+    display:flex;
+    gap:18px;
+    margin:6px 0 12px;
+    font-size:14px;
+}
+
+.gender-inline label{
+    display:flex;
+    align-items:center;
+    gap:6px;
+}
+input:disabled{
+ 	cursor:not-allowed;
+	
+}
+input:not(:disabled){
+cursor:text;
+}
+</style>
+</head>
+
+<body>
+
+<div class="form-section">
+<div class="form-box">
+
+<h2>Registration Form</h2>
+
+<form 
+action="http://127.0.0.1:5000/submit"
+method="POST" enctype="multipart/form-data">
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="text" name="roll" placeholder="Roll Number" required>
+    <input type="email" name="email" placeholder="Email ID" required>
+    <input type="tel" name="mobile" placeholder="Mobile Number" required>
+
+   
+<div class="gender-inline">
+   <label>Gender:
+  <input type="radio" name="gender" value="Male" required> Male
+</label>
+<label>
+  <input type="radio" name="gender" value="Female"> Female
+</label>
+<label>
+  <input type="radio" name="gender" value="Other"> Other
+</label>
+
+</div>
+
+    <input type="text" name="college" placeholder="College Name" required>
+
+    <select name="year" required>
+        <option value="">Year of Study</option>
+        <option>1st Year</option>
+        <option>2nd Year</option>
+        <option>3rd Year</option>
+        <option>4th Year</option>
+    </select>
+
+    <select name="event" id="eventSelect" onchange="toggleGroup()" required>
+        <option value="">Select Event</option>
+        <option>Code Craft</option>
+        <option>ArtByte</option>
+        <option>Tech Talk</option>
+        <option>Cyber Hunt</option>
+        <option>Cultural Events</option>
+    </select>
+
+    <input type="text" id="groupId" name="group" 
+           placeholder="Group Name(For Tech Talk)"
+           disabled>
+
+  
+
+    <label>Transaction ID</label>
+    <input type="text" name="transaction" placeholder="Enter Transaction ID" required>
+
+    <button type="submit">Submit</button>
+</form>
+
+<div class="info">
+    * Group ID required only for Tech Talk.
+</div>
+
+</div>
+</div>
+
+<script>
+function toggleGroup(){
+    const event=document.getElementById("eventSelect").value;
+    const group=document.getElementById("groupId");
+
+    if(event==="Tech Talk"){
+        group.disabled=false;
+        group.required=true;
+    }else{
+        group.disabled=true;
+        group.required=false;
+        group.value="";
+    }
+}
+</script>
+
+</body>
+</html>
